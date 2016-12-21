@@ -1,0 +1,63 @@
+version: "2"
+
+services:
+  'source_yii':
+      build: source
+      container_name: source_yii
+      ports: ['30022:22']
+      env_file: ['source/.environment']
+      volumes:
+        - ../../:/home/yiiuser/source/
+
+  'php_yii':
+      build: php
+      container_name: 'php_yii'
+      volumes_from: ['source_yii']
+      networks:
+        - iq-net
+      env_file: ['source/.environment']
+      links:
+        - mysql_yii
+      volumes:
+        - './logs/supervisor/:/var/log/dev_php'
+      ports: ['30023:22']
+
+  'nginx_yii':
+      build: nginx
+      container_name: 'nginx_yii'
+      ports: ['30020:80']
+      networks:
+        - iq-net
+      links: ['php_yii']
+      volumes_from: ['source_yii']
+      environment:
+        - PHP_HOST=php_yii
+        - NGINX_HOST_TEMPLATE=yii.dev
+        - NGINX_AUTH=false
+      volumes:
+        - './logs/nginx/:/var/log/nginx'
+        - '/etc/nginx/ssl/:/etc/nginx/ssl/'
+
+  'mysql_yii':
+      build: mysql
+      container_name: 'mysql_yii'
+      networks:
+        - iq-net
+      env_file: ['mysql/.environment']
+
+  'phpmyadmin_yii':
+      image: nazarpc/phpmyadmin:latest
+      container_name: 'phpmyadmin_yii'
+      networks:
+        - iq-net
+      environment:
+          - ALLOW_ARBITRARY=1
+          - URL=yii.dev
+      restart: always
+      links: ['mysql_yii']
+      ports:
+          - "30025:80"
+
+networks:
+  iq-net:
+      driver: bridge

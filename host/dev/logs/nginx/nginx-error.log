@@ -1,0 +1,43 @@
+2016/12/21 15:41:15 [error] 10#10: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.23.0.1, server: yii.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "yii.dev:30020"
+2016/12/21 15:41:17 [error] 10#10: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.23.0.1, server: yii.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "yii.dev:30020"
+2016/12/21 15:41:18 [error] 10#10: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.23.0.1, server: yii.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "yii.dev:30020"
+2016/12/21 15:41:18 [error] 10#10: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.23.0.1, server: yii.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "yii.dev:30020"
+2016/12/21 18:10:24 [error] 9#9: *19 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request: site/error in /home/yiiuser/source/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/yiiuser/source/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/yiiuser/source/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/yiiuser/source/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+yii\base\InvalidRouteException: Unable to resolve the request: site/about in /home/yiiuser/source/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/yiiuser/source/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('about', Array)
+#1 /home/yiiuser/source/vendor/" while reading upstream, client: 172.23.0.1, server: yii.dev, request: "GET /index.php?r=site%2Fabout HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "yii.dev:30020", referrer: "http://yii.dev:30020/"
+2016/12/21 19:06:41 [error] 9#9: *315 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request: site/error in /home/yiiuser/source/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/yiiuser/source/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/yiiuser/source/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/yiiuser/source/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+yii\web\NotFoundHttpException: Page not found. in /home/yiiuser/source/vendor/yiisoft/yii2/web/Request.php:191
+Stack trace:
+#0 /home/yiiuser/source/vendor/yiisoft/yii2/web/Application.php(80): yii\web\Request->resolve()
+#1 /home/yiiuser/source/vendor/yiisoft/yii2/base/Application.php(375): yii\web\" while reading upstream, client: 172.23.0.1, server: yii.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "yii.dev:30020"
+2016/12/21 19:06:42 [error] 9#9: *315 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request: site/error in /home/yiiuser/source/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/yiiuser/source/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/yiiuser/source/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/yiiuser/source/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+yii\web\NotFoundHttpException: Page not found. in /home/yiiuser/source/vendor/yiisoft/yii2/web/Request.php:191
+Stack trace:
+#0 /home/yiiuser/source/vendor/yiisoft/yii2/web/Application.php(80): yii\web\Request->resolve()
+#1 /home/yiiuser/source/vendor/yiisoft/yii2/base/Application.php(375): yii\web\" while reading upstream, client: 172.23.0.1, server: yii.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "yii.dev:30020"
